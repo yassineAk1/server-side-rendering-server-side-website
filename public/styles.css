@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@font-face {
+  font-family: "Bariol";
+  src: url("./Bariol_Regular.otf") format("opentype");
+  font-display: swap; 
+}
+
+:root{
+    --nav-bar-dark: #172F3BFF;
+    --font-body: "Bariol";
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-body);
+}
+
+.header-nav{
+    background-color: var(--nav-bar-dark) ;
+}
+
+
+.footer-nav{
+        background-color: var(--nav-bar-dark) ;
+
+}

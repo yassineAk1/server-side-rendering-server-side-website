@@ -8,8 +8,12 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js",
+    "dev": "browser-sync start --proxy localhost:8000 --files '**/*.liquid, **/*.css, **/*.js'"
   },
+  "nodemon": {
+  "ignore": ["**/*.liquid", "**/*.css"]
+},
   "keywords": [
     "node",
     "express",
@@ -22,7 +26,11 @@
   },
   "homepage": "https://github.com/fdnd-task/server-side-rendering#readme",
   "dependencies": {
-    "express": "latest",
-    "liquidjs": "latest"
+    "express": "^5.2.1",
+    "liquidjs": "latest",
+    "nodemon": "^3.1.14"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4"
   }
 }
