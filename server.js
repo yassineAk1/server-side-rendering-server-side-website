@@ -17,7 +17,6 @@ console.log('Hieronder moet je waarschijnlijk nog wat veranderen')
 // (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
 // console.log(apiResponseJSON)
 
-
 // Maak een nieuwe Express applicatie aan, waarin we de server configureren
 const app = express()
 
@@ -36,11 +35,25 @@ app.engine('liquid', engine.express());
 // Let op: de browser kan deze bestanden niet rechtstreeks laden (zoals voorheen met HTML bestanden)
 app.set('views', './views')
 
-// Maak een GET route voor de index (meestal doe je dit in de root, als /)
 app.get('/', async function (request, response) {
-   // Render index.liquid uit de Views map
-   // Geef hier eventueel data aan mee
-   response.render('index.liquid')
+
+  const snapmapsResponse = await fetch('https://fdnd-agency.directus.app/items/snappthis_snapmap')
+  const snapmapsJSON = await snapmapsResponse.json()
+  const snapmaps = snapmapsJSON.data
+
+  response.render('index.liquid', { snapmaps })
+})
+
+
+app.get('/snapmap/:uuid', async function (request, response) {
+
+  const uuid = request.params.uuid
+  const snapmapResponse = await fetch(`https://fdnd-agency.directus.app/items/snappthis_snapmap/${uuid}?fields=*,snaps.*`)
+  const snapmapJSON = await snapmapResponse.json()
+  const snapmap = snapmapJSON.data
+  const snaps = snapmap.snaps
+
+  response.render('snapmap.liquid', { snapmap, snaps })
 })
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
