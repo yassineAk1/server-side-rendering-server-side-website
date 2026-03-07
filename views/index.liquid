@@ -1,24 +1,22 @@
 {% render 'views/head.liquid' %}
 
-  <main>
+<header>
+  <nav class="header-nav">
+    <span class="map-title">Snappthis</span>
+    <button class="nav-grid-btn" type="button">
+      <img src="/grid.svg" alt="" width="22" height="22">
+    </button>
+  </nav>
+</header>
 
-    <section>
-      <img src="images/avatar.jpg" alt="" />
-      <p>Westerpark</p>
-    </section>
-
-    <section>
-      <button type="button">📷</button>
-    </section>
-
-      <ul>
-        {% for photo in photos %}
-            <li>
-              <img src="" alt="">          
-            </li>
-        {% endfor %}
-      </ul>
-
-  </main>
+<main>
+  <ul class="snapmap-list">
+    {% for snapmap in snapmaps %}
+      <li>
+        <a href="/snapmap/{{ snapmap.uuid }}">{{ snapmap.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</main>
 
 {% render 'views/foot.liquid' %}

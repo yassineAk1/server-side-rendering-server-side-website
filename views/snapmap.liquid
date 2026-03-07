@@ -1,0 +1,36 @@
+{% render 'views/head.liquid' %}
+
+<header>
+  <nav class="header-nav">
+    <span class="map-title">{{ snapmap.name }}</span>
+    <button class="nav-grid-btn" type="button">
+      <img src="/grid.svg" alt="Grid" width="22" height="22">
+    </button>
+  </nav>
+</header>
+
+<main>
+  <div class="group-bar">
+    <img class="group-icon" src="/GroupST-copy.svg" alt="Groep" width="22" height="22">
+  </div>
+
+  <div class="camera-section">
+    <button class="camera-btn" type="button">
+      <img src="/camera-alt.svg" alt="Foto maken" width="120" height="120">
+    </button>
+  </div>
+
+  <ul class="photo-grid">
+    {% for snap in snaps %}
+      <li class="photo-item">
+        {% if snap.picture %}
+          <img src="https://fdnd-agency.directus.app/assets/{{ snap.picture }}" alt="snap">
+        {% else %}
+          <img src="/placeholder.jpeg" alt="">
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</main>
+
+{% render 'views/foot.liquid' %}
