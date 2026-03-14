@@ -68,6 +68,80 @@ body {
     padding: 0;
 }
 
+.nav-back {
+    grid-column: 1;
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.nav-plus-btn {
+    grid-column: 3;
+    justify-self: end;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.75rem;
+    line-height: 1;
+    padding: 0;
+}
+
+/* ---------group list----------- */
+.group-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.group-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.group-link {
+    text-decoration: none;
+    flex: 1;
+}
+
+.group-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.group-name {
+    color: #172F3B;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.group-members {
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+.group-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.group-action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    opacity: 0.6;
+}
+
+.group-action-btn img {
+    display: block;
+}
+
 main {
     flex: 1;
     display: flex;
