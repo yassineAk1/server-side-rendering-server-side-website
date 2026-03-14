@@ -35,13 +35,15 @@ app.engine('liquid', engine.express());
 // Let op: de browser kan deze bestanden niet rechtstreeks laden (zoals voorheen met HTML bestanden)
 app.set('views', './views')
 
-app.get('/', async function (request, response) {
+// fetcht een URL en geef direct .data terug
+const fetchData = url => fetch(url).then(r => r.json()).then(r => r.data)
 
-  const snapmapsResponse = await fetch('https://fdnd-agency.directus.app/items/snappthis_snapmap')
-  const snapmapsJSON = await snapmapsResponse.json()
-  const snapmaps = snapmapsJSON.data
-
-  response.render('index.liquid', { snapmaps })
+// homepagina laad alle snapmaps en opent de eerste
+app.get('/', async (req, res) => {
+  const snapmaps = await fetchData('https://fdnd-agency.directus.app/items/snappthis_snapmap')
+  // Gebruik de uuid van de eerste snapmap om de details op te halen
+  const snapmap = await fetchData(`https://fdnd-agency.directus.app/items/snappthis_snapmap/${snapmaps[0].uuid}?fields=*,snaps.*,groups.snappthis_group_uuid.*`)
+  res.render('snapmap.liquid', { snapmaps, snapmap, snaps: snapmap.snaps, groep: snapmap.groups[0]?.snappthis_group_uuid || null, activePage: 'home' })
 })
 
 
