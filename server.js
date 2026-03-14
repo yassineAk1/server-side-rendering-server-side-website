@@ -62,7 +62,12 @@ app.get('/groepen', async (req, res) => {
   res.render('groepen.liquid', { groepen, activePage: 'groepen' })
 })
 
+// Detailpagina van één groep op basis van uuid in de URL
+app.get('/groep/:uuid', async (req, res) => {
+  const groep = await fetchData(`https://fdnd-agency.directus.app/items/snappthis_group/${req.params.uuid}?fields=*,snappmap.snappthis_snapmap_uuid.*`)
+  res.render('groep.liquid', { groep, activePage: 'groepen' })
 })
+
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 // Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt
