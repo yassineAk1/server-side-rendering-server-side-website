@@ -268,3 +268,13 @@ main {
     bottom: 0;
     width: 100%;
 }
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-item.active {
+    filter: invert(59%) sepia(97%) saturate(400%) hue-rotate(95deg) brightness(96%) contrast(101%);
+}
