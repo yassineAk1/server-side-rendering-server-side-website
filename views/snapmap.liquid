@@ -2,21 +2,33 @@
 
 <header>
   <nav class="header-nav">
-    <span class="map-title">{{ snapmap.name }}</span>
+    <details class="snapmap-dropdown">
+      <summary class="map-title-btn">{{ snapmap.name }}</summary>
+      <ul class="snapmap-dropdown-list">
+        {% for sm in snapmaps %}
+          <li>
+            <a href="/snapmap/{{ sm.uuid }}">{{ sm.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </details>
     <button class="nav-grid-btn" type="button">
-      <img src="/grid.svg" alt="Grid" width="22" height="22">
+      <img src="/grid.svg" alt="" width="22" height="22">
     </button>
   </nav>
 </header>
 
 <main>
-  <div class="group-bar">
-    <img class="group-icon" src="/GroupST-copy.svg" alt="Groep" width="22" height="22">
-  </div>
+  {% if groep %}
+    <div class="group-bar">
+      <img class="group-icon" src="/GroupST-copy.svg" alt="" width="20" height="20">
+      <a href="/groep/{{ groep.uuid }}" class="group-bar-name">{{ groep.name }}</a>
+    </div>
+  {% endif %}
 
   <div class="camera-section">
     <button class="camera-btn" type="button">
-      <img src="/camera-alt.svg" alt="Foto maken" width="120" height="120">
+      <img src="/camera-alt.svg" alt="" width="120" height="120">
     </button>
   </div>
 
@@ -33,4 +45,4 @@
   </ul>
 </main>
 
-{% render 'views/foot.liquid' %}
+{% render 'views/foot.liquid', activePage: activePage %}
