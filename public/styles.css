@@ -223,6 +223,40 @@ main {
     object-fit: cover;
     display: block;
 }
+
+/* ---------snapmap dropdown----------- */
+.snapmap-dropdown {
+    grid-column: 2;
+}
+
+.snapmap-dropdown-list {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-bar-dark);
+    z-index: 9;
+}
+
+.snapmap-dropdown-list li {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.snapmap-dropdown-list li a {
+    display: block;
+    padding: 1.1rem 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.snapmap-dropdown-list li a:hover {
+    background-color: rgba(255,255,255,0.07);
+}
+
 /* ---------footer----------- */
 .footer-nav {
     background-color: var(--nav-bar-dark);
