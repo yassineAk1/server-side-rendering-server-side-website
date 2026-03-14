@@ -46,14 +46,16 @@ app.get('/', async (req, res) => {
   res.render('snapmap.liquid', { snapmaps, snapmap, snaps: snapmap.snaps, groep: snapmap.groups[0]?.snappthis_group_uuid || null, activePage: 'home' })
 })
 
+// Detailpagina van één snapmap, haalt snapmap en alle snapmaps tegelijk op
+app.get('/snapmap/:uuid', async (req, res) => {
+  // Promise.all stuurt beide fetches tegelijk op
+  const [snapmap, snapmaps] = await Promise.all([
+    fetchData(`https://fdnd-agency.directus.app/items/snappthis_snapmap/${req.params.uuid}?fields=*,snaps.*,groups.snappthis_group_uuid.*`),
+    fetchData('https://fdnd-agency.directus.app/items/snappthis_snapmap'),
+  ])
+  res.render('snapmap.liquid', { snapmap, snaps: snapmap.snaps, snapmaps, groep: snapmap.groups[0]?.snappthis_group_uuid || null, activePage: 'home' })
+})
 
-app.get('/snapmap/:uuid', async function (request, response) {
-
-  const uuid = request.params.uuid
-  const snapmapResponse = await fetch(`https://fdnd-agency.directus.app/items/snappthis_snapmap/${uuid}?fields=*,snaps.*`)
-  const snapmapJSON = await snapmapResponse.json()
-  const snapmap = snapmapJSON.data
-  const snaps = snapmap.snaps
 
   response.render('snapmap.liquid', { snapmap, snaps })
 })
