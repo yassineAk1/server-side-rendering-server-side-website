@@ -56,8 +56,12 @@ app.get('/snapmap/:uuid', async (req, res) => {
   res.render('snapmap.liquid', { snapmap, snaps: snapmap.snaps, snapmaps, groep: snapmap.groups[0]?.snappthis_group_uuid || null, activePage: 'home' })
 })
 
+// Overzichtspagina van alle groepen
+app.get('/groepen', async (req, res) => {
+  const groepen = await fetchData('https://fdnd-agency.directus.app/items/snappthis_group?fields=*,snappmap.*')
+  res.render('groepen.liquid', { groepen, activePage: 'groepen' })
+})
 
-  response.render('snapmap.liquid', { snapmap, snaps })
 })
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
