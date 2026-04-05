@@ -27,7 +27,8 @@ De applicatie bestaat uit vier pagina's:
 - **Groepenoverzicht**: een overzicht van alle beschikbare groepen, elk met de mogelijkheid om leden of snaps toe te voegen.
 - **Groep detailpagina**: een pagina die je laat zien welke snappmaps er binnen een specifieke groep beschikbaar zijn.
 - **Foutpagina**: een eigen 404-pagina die getoond wordt als een route niet bestaat.
-![Free iPhone 17 Pro](https://github.com/user-attachments/assets/1c93298f-97d7-4589-9ae6-c08ab0bbaac3)
+
+![Free iPhone 17 Pro (1)](https://github.com/user-attachments/assets/dcaf927e-b258-49c2-861d-e2bbad828539)
 
 
 ## Gebruik
