@@ -32,8 +32,7 @@ De applicatie bestaat uit vier pagina's:
 
 ## Gebruik
 
-<!-- Voeg hier een GIF of korte video toe die de navigatiestroom laat zien: beginnen op de snappmap, wisselen via de dropdown, klikken op een groep, en navigeren naar een groep-detailpagina. -->
-![Uploading Free iPhone 17 Pro.svg…]()
+
 
 De app is gebouwd voor mobiel gebruik en werkt als volgt:
 
@@ -96,6 +95,10 @@ De actieve pagina in de navigatie wordt bijgehouden via de variabele `activePage
 ### Styling en huisstijl
 
 <!-- Voeg hier een screenshot toe van de navigatiebalk onderaan en de groepspagina, zodat de huisstijl goed zichtbaar is. -->
+![Free iPhone Air](https://github.com/user-attachments/assets/5cee4ba0-c435-4970-b9ca-2b3f940566f5)
+
+<img width="471" height="71" alt="Schermafbeelding 2026-04-05 140628" src="https://github.com/user-attachments/assets/cfc2e2f4-640b-4841-9e34-17c03b75d252" />
+
 
 De CSS volgt de visuele identiteit van Snappthis. Het lettertype **Bariol** (bold, regular en italic) is als lokaal font geladen via `@font-face`. Alle iconen zijn SVG-bestanden die rechtstreeks uit de huisstijl komen, zoals de camera, het grid-icoon en de groepsiconen. De layout is mobile-first opgebouwd: smal en verticaal, precies zoals een mobiele webapp verwacht wordt te zijn.
 
