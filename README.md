@@ -17,11 +17,11 @@
 
 <!-- Voeg hier een link toe naar de live website zodra die gehost is -->
 
-Sprint 8 draaide volledig om server-side rendering. De opdracht: bouw een werkende webapplicatie voor **Snappthis**, een platform waar gebruikers foto's plaatsen binnen thematische collecties genaamd snappmaps.
+Sprint 8 draaide volledig om server-side rendering. De opdracht: bouw een werkende webapplicatie voor Snappthis, een platform waar gebruikers foto's plaatsen binnen thematische collecties genaamd snappmaps.
 
 De uitdaging was om niet langer statische HTML te schrijven, maar om een Express-server op te zetten die live data uit een externe REST API ophaalt en die via Liquid-templates omzet naar dynamische webpagina's. Elke keer dat iemand een pagina bezoekt, wordt de meest recente data opgehaald en weergegeven.
 
-De applicatie bestaat uit drie pagina's:
+Ik heb deze sprint de volgende paginas gebouwd:
 
 - **Snappmap**: de hoofdpagina waar alle foto's van een geselecteerde snappmap worden getoond. Bovenin kun je via een dropdown wisselen naar een andere snappmap.
 - **Groepenoverzicht**: een overzicht van alle beschikbare groepen, elk met de mogelijkheid om leden of snaps toe te voegen.
