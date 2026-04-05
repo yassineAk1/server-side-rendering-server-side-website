@@ -12,6 +12,7 @@
 
 ## Beschrijving
 
+
 <!-- Voeg hier een screenshot toe van de app op mobiel formaat, bijvoorbeeld de snappmap-pagina met foto's erin. Dit geeft meteen een goed beeld van hoe de app eruitziet. -->
 
 <!-- Voeg hier een link toe naar de live website zodra die gehost is -->
@@ -26,11 +27,13 @@ De applicatie bestaat uit vier pagina's:
 - **Groepenoverzicht**: een overzicht van alle beschikbare groepen, elk met de mogelijkheid om leden of snaps toe te voegen.
 - **Groep detailpagina**: een pagina die je laat zien welke snappmaps er binnen een specifieke groep beschikbaar zijn.
 - **Foutpagina**: een eigen 404-pagina die getoond wordt als een route niet bestaat.
+![Free iPhone 17 Pro](https://github.com/user-attachments/assets/1c93298f-97d7-4589-9ae6-c08ab0bbaac3)
 
 
 ## Gebruik
 
 <!-- Voeg hier een GIF of korte video toe die de navigatiestroom laat zien: beginnen op de snappmap, wisselen via de dropdown, klikken op een groep, en navigeren naar een groep-detailpagina. -->
+![Uploading Free iPhone 17 Pro.svg…]()
 
 De app is gebouwd voor mobiel gebruik en werkt als volgt:
 
